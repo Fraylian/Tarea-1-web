@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forma2 - CSS</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Representación Gráfica con CSS</h1>
+    <div class="pixel-grid">
+      <!-- Generar los divs para formar el nombre, apellido y matrícula -->
+      <!-- Ejemplo: Aquí se muestran las letras del nombre como "píxeles" -->
+      <div class="pixel" onclick="showMessage('F')"></div>
+      <div class="pixel"></div>
+      <div class="pixel" onclick="showMessage('A')"></div>
+      <!-- Agrega más divs para completar el nombre -->
+    </div>
+    <div class="message"></div>
+    <a href="index.html">Volver a la Página Principal</a>
+  </main>
+  <script>
+    function showMessage(letter) {
+      const messages = {
+        'F': 'La letra F representa Fortaleza en mi vida.',
+        'A': 'La letra A representa Amistad en mi vida.',
+        // Agregar más letras y mensajes según sea necesario
+      };
+      document.querySelector('.message').textContent = messages[letter] || '';
+    }
+  </script>
+</body>
+</html>
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #020202;
+    color: white;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .pixel-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 20px); /* Ajustar según sea necesario */
+    grid-gap: 2px;
+    margin: 0 auto;
+  }
+
+  .pixel {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 1px solid #000;
+  }
+
+  .message {
+    margin-top: 20px;
+    font-size: 1.5rem;
+  }
+</style>
