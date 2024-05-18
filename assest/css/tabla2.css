@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.pixel-grid, .emoji-grid {
+    display: grid;
+    gap: 2px;
+    margin: 20px;
+}
+
+.pixel-grid {
+    grid-template-columns: repeat(3, 20px);
+}
+
+.emoji-grid {
+    grid-template-columns: repeat(3, 20px);
+}
+
+.pixel {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border: 1px solid #444;
+}
+
+.pixel.active {
+    background-color: #0f0;
+}
+
+.pixel-grid .pixel, .emoji-grid .pixel {
+    cursor: pointer;
+}
